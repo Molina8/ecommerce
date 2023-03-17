@@ -24,9 +24,11 @@ properties:
 
 Ha sido desplegado con Docker usando 2 contenedores, el que aloja la App y el que aloja una base de datos PostgreSql local.
 
-Para obtener la imagen del programa basta con realizar los siguientes comandos desde el directorio donde se encuenta el fichero docker-compose.yml
+Para obtener la imagen del programa hay que ejecutar el siguiente comando desde el directorio donde se encuenta el fichero docker-compose.yml
 
 *docker pull jesusmolina8/ecommerce:1.0.0*
+
+Ahora desplegamos el Docker:
 
 *docker-compose up -d*
 
