@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+  app:
+    image: jesusmolina8/ecommerce:1.0.0
+    ports:
+      - "9999:9999"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/testdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_DATABASE-PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      DB_DATA: /data
+    volumes:
+      - .:/usr/src/app
+      - data:/data
+volumes:
+  db-data:
+  data:
+    driver: local
