@@ -32,6 +32,10 @@ Ahora desplegamos el Docker:
 
 *docker-compose up -d*
 
+Para importar el proyecto en eclipse:
+
+--Import -> Maven Project
+
 La app se despliega sobre un Tomcat que toma como puero el 9999, por lo que la url para las peticiones HTTP partiría de:
 
 *localhost:9999/*
